@@ -27,3 +27,11 @@ cd ..
 docker-compose build
 
 docker-compose up -d
+
+### Test
+
+curl -x http://localhost:8080 http://httpforever.com/
+
+### Logs
+
+docker logs -f ship-proxy

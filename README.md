@@ -87,7 +87,7 @@ docker logs -f ship-proxy
 
 According to the design requirement, the system must handle HTTP/HTTPS requests **sequentially** over a single persistent TCP connection between the ship (proxy client) and the offshore proxy server.
 
-From the ample logs, we can confirm this behavior:
+From the sample logs, we can confirm this behavior:
 
 ```
 Request Id : 6f187215-d1de-423d-a8d5-d559119bd712

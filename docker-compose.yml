@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  remote-server:
+    image: remote-server:latest
+    container_name: remote-server
+    ports:
+      - "9000:9000"
+      - "9090:9090"
+    networks:
+      - proxy-net
+
+  ship-proxy:
+    image: ship-proxy:latest
+    container_name: ship-proxy
+    ports:
+      - "8080:8080"  # exposed to host
+      - "8081:8081"  # optional, internal Spring port
+    environment:
+      OFFSHORE_HOST: remote-server
+      OFFSHORE_PORT: 9090
+    depends_on:
+      - remote-server
+    networks:
+      - proxy-net
+
+networks:
+  proxy-net:
+    driver: bridge

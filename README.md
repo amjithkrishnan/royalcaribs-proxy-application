@@ -23,4 +23,5 @@ docker build -t ship-proxy:latest -f Dockerfile.txt .
 cd ..
 
 docker-compose build
+
 docker-compose up -d

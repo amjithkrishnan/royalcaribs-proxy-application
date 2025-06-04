@@ -14,6 +14,7 @@ Ensure the following tools are installed on your system:
 ## 🔧 How to Build and Run
 
 ```bash
+# Start from project's root dir
 # Navigate to remoteproxy directory
 cd remoteproxy
 

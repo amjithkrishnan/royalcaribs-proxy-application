@@ -11,11 +11,13 @@
 ### Build and Run
 
 cd remoteproxy
+
 mvn clean package
 
 docker build -t remote-server:latest -f Dockerfile.txt .
 
 cd ../shipproxy
+
 mvn clean package
 
 docker build -t ship-proxy:latest -f Dockerfile.txt .

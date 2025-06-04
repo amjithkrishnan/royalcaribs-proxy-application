@@ -32,6 +32,21 @@ docker-compose up -d
 
 curl -x http://localhost:8080 http://httpforever.com/
 
+####For trigger multiple request at a time
+####Windows powershell
+1..10 | ForEach-Object {
+  Start-Job { curl.exe -x http://localhost:8080 http://httpforever.com/ } 
+}
+Get-Job | Wait-Job
+
+#####Linux
+
+for i in {1..10}; do
+  curl -x http://localhost:8080 http://httpforever.com/ &
+done
+wait
+
+
 ### Logs
 
 docker logs -f ship-proxy
